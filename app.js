@@ -9,7 +9,7 @@ var campgrounds = [
   {
     name: "Salmon Creek",
     image:
-      "https://photosforclass.com/download/pixabay-691424?webUrl=https%3A%2F%2Fpixabay.com%2Fget%2Fef3cb00b2af01c22d2524518b7444795ea76e5d004b014459cf6c47da0efb7_960.jpg&user=Free-Photos"
+      "https://i1.wp.com/visitmckenzieriver.com/oregon/wp-content/uploads/2015/06/paradise_campground.jpg?fit=640%2C480"
   },
   {
     name: "Granite Hill",
@@ -24,7 +24,7 @@ var campgrounds = [
   {
     name: "Salmon Creek",
     image:
-      "https://photosforclass.com/download/pixabay-691424?webUrl=https%3A%2F%2Fpixabay.com%2Fget%2Fef3cb00b2af01c22d2524518b7444795ea76e5d004b014459cf6c47da0efb7_960.jpg&user=Free-Photos"
+      "https://i1.wp.com/visitmckenzieriver.com/oregon/wp-content/uploads/2015/06/paradise_campground.jpg?fit=640%2C480"
   },
   {
     name: "Granite Hill",
