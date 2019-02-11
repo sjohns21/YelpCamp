@@ -86,7 +86,7 @@ app.get("/campgrounds", function(req, res) {
 
 //NEW - show form to create new campground
 app.get("/campgrounds/new", function(req, res) {
-  res.render("new.ejs");
+  res.render("new");
 });
 
 //CREATE - add new campground to db
@@ -100,6 +100,7 @@ app.post("/campgrounds", function(req, res) {
     if (err) {
       console.log(err);
     } else {
+      console.log(newlyCreated);
       res.redirect("/campgrounds");
     }
   });
