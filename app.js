@@ -1,8 +1,13 @@
 var express = require("express"),
   app = express(),
   bodyParser = require("body-parser"),
-  mongoose = require("mongoose");
+  mongoose = require("mongoose"),
+  Campground = require("./models/campground"),
+  seedDB = require("./seeds");
+// Comment = require("./models/comment"),
+// User = require("./models/user");
 
+seedDB();
 mongoose.connect("mongodb://localhost/yelp_camp", {
   useNewUrlParser: true
 });
@@ -10,13 +15,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.set("view engine", "ejs");
 
 //SCHEMA SETUP
-var campgroundSchema = new mongoose.Schema({
-  name: String,
-  image: String,
-  description: String
-});
-
-var Campground = mongoose.model("Campground", campgroundSchema);
 
 // Campground.create(
 //   {
@@ -45,11 +43,6 @@ var Campground = mongoose.model("Campground", campgroundSchema);
 //     name: "Granite Hill",
 //     image:
 //       "https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80"
-//   },
-//   {
-//     name: "Mountain Goat's Rest",
-//     image:
-//       "https://photosforclass.com/download/pixabay-1845719?webUrl=https%3A%2F%2Fpixabay.com%2Fget%2Fe83db50a2ff5083ed1584d05fb1d4e97e07ee3d21cac104491f9c77ca3eab7ba_960.jpg&user=Pexels"
 //   },
 //   {
 //     name: "Salmon Creek",
