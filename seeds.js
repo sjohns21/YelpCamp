@@ -8,18 +8,21 @@ var data = [
     image:
       "https://i1.wp.com/visitmckenzieriver.com/oregon/wp-content/uploads/2015/06/paradise_campground.jpg?fit=640%2C480",
     description: "blah"
+    // comments: []
   },
   {
     name: "Granite Hill",
     image:
       "https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80",
     description: "blah"
+    // comments: []
   },
   {
     name: "Salmon Creek",
     image:
       "https://i1.wp.com/visitmckenzieriver.com/oregon/wp-content/uploads/2015/06/paradise_campground.jpg?fit=640%2C480",
     description: "blah"
+    // comments: []
   }
 ];
 
@@ -28,6 +31,7 @@ function seedDB() {
     if (err) {
       console.log(err);
     }
+    //#TODO DELETE COMMENTS??
     console.log("removed campgrounds!");
     data.forEach(function(seed) {
       Campground.create(seed, function(err, campground) {
