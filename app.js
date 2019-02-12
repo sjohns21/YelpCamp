@@ -34,7 +34,7 @@ app.get("/campgrounds", function(req, res) {
 
 //NEW - show form to create new campground
 app.get("/campgrounds/new", function(req, res) {
-  res.render("campgounds/new");
+  res.render("campgrounds/new");
 });
 
 //CREATE - add new campground to db
