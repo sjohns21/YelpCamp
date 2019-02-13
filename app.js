@@ -36,14 +36,22 @@ app.get("/", function(req, res) {
   res.render("landing");
 });
 
+app.use(function(req, res, next) {
+  res.locals.currentUser = req.user;
+  next();
+});
+
 //INDEX - show all campgrounds
 app.get("/campgrounds", function(req, res) {
+  console.log(req.user);
   // get all campgrounds from db
   Campground.find({}, function(err, AllCampgrounds) {
     if (err) {
       console.log(err);
     } else {
-      res.render("campgrounds/index", { campgrounds: AllCampgrounds });
+      res.render("campgrounds/index", {
+        campgrounds: AllCampgrounds
+      });
     }
   });
 });
