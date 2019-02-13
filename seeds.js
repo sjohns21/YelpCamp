@@ -29,37 +29,35 @@ var data = [
 function seedDB() {
   Comment.deleteMany({}, function(err) {
     console.log("comments deleted");
-
     Campground.deleteMany({}, function(err) {
       if (err) {
         console.log(err);
       }
-      //#TODO DELETE COMMENTS??
       console.log("removed campgrounds!");
-      data.forEach(function(seed) {
-        Campground.create(seed, function(err, campground) {
-          if (err) {
-            console.log(err);
-          } else {
-            console.log("added a campground");
-            Comment.create(
-              {
-                text: "this place is great",
-                author: "homer"
-              },
-              function(err, comment) {
-                if (err) {
-                  console.log(err);
-                } else {
-                  campground.comments.push(comment);
-                  campground.save();
-                  console.log("created new comment");
-                }
-              }
-            );
-          }
-        });
-      });
+      // data.forEach(function(seed) {
+      //   Campground.create(seed, function(err, campground) {
+      //     if (err) {
+      //       console.log(err);
+      //     } else {
+      //       console.log("added a campground");
+      //       Comment.create(
+      //         {
+      //           text: "this place is great",
+      //           author: "homer"
+      //         },
+      //         function(err, comment) {
+      //           if (err) {
+      //             console.log(err);
+      //           } else {
+      //             campground.comments.push(comment);
+      //             campground.save();
+      //             console.log("created new comment");
+      //           }
+      //         }
+      //       );
+      //     }
+      //   });
+      // });
     });
   });
 }

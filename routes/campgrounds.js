@@ -4,7 +4,6 @@ var express = require("express"),
 
 //INDEX - show all campgrounds
 router.get("/", function(req, res) {
-  console.log(req.user);
   Campground.find({}, function(err, AllCampgrounds) {
     if (err) {
       console.log(err);
@@ -32,7 +31,6 @@ router.post("/", function(req, res) {
     if (err) {
       console.log(err);
     } else {
-      console.log(newlyCreated);
       res.redirect("/campgrounds");
     }
   });
@@ -47,7 +45,6 @@ router.get("/:id", function(req, res) {
       if (err) {
         console.log(err);
       } else {
-        console.log(foundCampground);
         //render show template with that campground
         res.render("campgrounds/show", { campground: foundCampground });
       }

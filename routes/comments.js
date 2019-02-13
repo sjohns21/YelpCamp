@@ -6,7 +6,6 @@ var express = require("express"),
 //Comments New
 router.get("/new", isLoggedIn, function(req, res) {
   //find campground by id
-  console.log(req.params.id);
   Campground.findById(req.params.id, function(err, campground) {
     if (err) {
       console.log(err);
@@ -28,6 +27,11 @@ router.post("/", isLoggedIn, function(req, res) {
         if (err) {
           console.log(err);
         } else {
+          //add username and id to comment
+          comment.author.id = req.user._id;
+          comment.author.username = req.user.username;
+          //save comment
+          comment.save();
           campground.comments.push(comment);
           campground.save();
           res.redirect("/campgrounds/" + campground._id);
