@@ -3,7 +3,7 @@ var express = require("express"),
   passport = require("passport"),
   User = require("../models/user");
 
-//root toure
+//root
 router.get("/", function(req, res) {
   res.render("landing");
 });
@@ -29,7 +29,7 @@ router.post("/register", function(req, res) {
 
 //show login form
 router.get("/login", function(req, res) {
-  res.render("login");
+  res.render("login", { message: req.flash("error") });
 });
 
 //handle login logic

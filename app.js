@@ -8,7 +8,8 @@ var express = require("express"),
   passport = require("passport"),
   LocalStrategy = require("passport-local"),
   User = require("./models/user"),
-  methodOverride = require("method-override");
+  methodOverride = require("method-override"),
+  flash = require("connect-flash");
 
 //requiring routes
 var commentRoutes = require("./routes/comments"),
@@ -22,6 +23,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
 app.use(methodOverride("_method"));
+app.use(flash());
 //seedDB(); // clear / seed the database
 
 // PASSPORT CONFIG
