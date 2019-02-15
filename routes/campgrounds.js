@@ -24,6 +24,7 @@ router.get("/new", middleware.isLoggedIn, function(req, res) {
 //CREATE - add new campground to db
 router.post("/", middleware.isLoggedIn, function(req, res) {
   var name = req.body.name;
+  var price = req.body.price;
   var image = req.body.image;
   var desc = req.body.description;
   var author = {
@@ -32,6 +33,7 @@ router.post("/", middleware.isLoggedIn, function(req, res) {
   };
   var newCampground = {
     name: name,
+    price: price,
     image: image,
     description: desc,
     author: author
