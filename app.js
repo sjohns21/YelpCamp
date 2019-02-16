@@ -20,7 +20,10 @@ var commentRoutes = require("./routes/comments"),
 //   useNewUrlParser: true
 // });
 mongoose.connect(
-  "mongodb+srv://steve:5m4X4iJ6aY77dNN@cluster0-35p2z.gcp.mongodb.net/data?retryWrites=true"
+  "mongodb+srv://steve:5m4X4iJ6aY77dNN@cluster0-35p2z.gcp.mongodb.net/data?retryWrites=true",
+  {
+    useNewUrlParser: true
+  }
 );
 
 app.use(bodyParser.urlencoded({ extended: true }));
