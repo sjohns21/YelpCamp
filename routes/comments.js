@@ -4,7 +4,7 @@ var express = require("express"),
   Comment = require("../models/comment");
 middleware = require("../middleware");
 
-//Comments New
+//NEW
 router.get("/new", middleware.isLoggedIn, function(req, res) {
   //find campground by id
   Campground.findById(req.params.id, function(err, campground) {
@@ -16,7 +16,7 @@ router.get("/new", middleware.isLoggedIn, function(req, res) {
   });
 });
 
-//Comments Create
+//CREATE
 router.post("/", middleware.isLoggedIn, function(req, res) {
   //lookup campground using ID
   Campground.findById(req.params.id, function(err, campground) {
@@ -44,7 +44,7 @@ router.post("/", middleware.isLoggedIn, function(req, res) {
   });
 });
 
-//COMMENT EDIT
+//EDIT
 router.get("/:comment_id/edit", middleware.checkCommentOwnership, function(
   req,
   res
@@ -61,7 +61,7 @@ router.get("/:comment_id/edit", middleware.checkCommentOwnership, function(
   });
 });
 
-//COMMENT UPDATE
+//UPDATE
 router.put("/:comment_id", middleware.checkCommentOwnership, function(
   req,
   res
@@ -78,7 +78,7 @@ router.put("/:comment_id", middleware.checkCommentOwnership, function(
   });
 });
 
-// COMMENT DESTROY ROUTE
+//DESTROY
 router.delete("/:comment_id", middleware.checkCommentOwnership, function(
   req,
   res
