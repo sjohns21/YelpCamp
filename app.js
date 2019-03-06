@@ -28,7 +28,7 @@ app.use(methodOverride("_method"));
 app.use(flash());
 //seedDB(); // clear / seed the database
 
-// PASSPORT CONFIG
+// Passport config
 app.use(
   require("express-session")({
     secret: "minty fresh",
