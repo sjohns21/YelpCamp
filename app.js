@@ -11,7 +11,7 @@ var express = require("express"),
   methodOverride = require("method-override"),
   flash = require("connect-flash");
 
-//requiring routes
+//Requiring routes
 var commentRoutes = require("./routes/comments"),
   campgroundRoutes = require("./routes/campgrounds"),
   indexRoutes = require("./routes/index");
